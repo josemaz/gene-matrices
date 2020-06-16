@@ -13,4 +13,4 @@ Install julia:
 
 Install data directory:
 
-`$ bash install-julia.sh`
+`$ bash install-data.sh`
