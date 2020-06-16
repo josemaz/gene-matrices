@@ -3,7 +3,7 @@
 cat data.* > gene-expression.tgz
 tar xzvf gene-expression.tgz
 cd Data/Expression/
-md5um -c checksums.md5
+md5sum -c checksums.md5
 echo "DATA INSTALLED SUCCESSFULLY"
 
 # clean
