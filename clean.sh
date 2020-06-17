@@ -1,1 +1,0 @@
-rm -rf Data gene-expression.tgz

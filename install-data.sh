@@ -5,7 +5,8 @@ tar xzvf gene-expression.tgz
 cd Data/Expression/
 md5sum -c checksums
 [[ $? == 0 ]] \
-   && echo "DATA INSTALLED SUCCESSFULLY" && exit 0
+   && echo "DATA INSTALLED SUCCESSFULLY" \
+   && cd ../.. && rm -rf gene-expression.tgz && exit 0
 echo "Something was wrong"
 exit 15
 
