@@ -21,6 +21,4 @@ Install data directory:
 
 ## 02 - Clustering and Pearson correlation
 
-`$ julia julia julia/02-clusters.jl -c Data/clean/Healthy-clean.tsv`
-
-`$ bash 02-CorrAndPearson.sh`
+`$ bash 02-clustering.sh`
