@@ -15,6 +15,8 @@ Install data directory:
 
 `$ bash install-data.sh`
 
+## Bioninformatics process
+
 ## 01 - Clean subtype data
 
 `$ bash 01-clean.sh`
@@ -22,3 +24,7 @@ Install data directory:
 ## 02 - Clustering and Pearson correlation
 
 `$ bash 02-clustering.sh`
+
+Execute in backgorund to best performance:
+
+`$ bash 02-clustering.sh &> salida.log &`
