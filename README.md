@@ -23,6 +23,10 @@ Install data directory:
 
 `$ bash 01-clean.sh`
 
+Outputs are saved on:
+
+`$ ls Data/clean/  `
+
 # 02 - Clustering 
 
 `$ bash 02-clustering.sh`
@@ -31,7 +35,15 @@ Execute in backgorund to best performance:
 
 `$ bash 02-clustering.sh &> salida.log &`
 
-# Pearson correlation
+Clustering Outputs are saved on:
+
+`$ ls Data/Clustered/  `
+
+Pearson triangular matrix in list format are saved on:
+
+`$ ls Data/Pearson/  `
+
+# 03 - Pearson correlation
 
 `$ python py/03-plot-pearson.py Data/clean/Healthy-clean.tsv`
 
