@@ -24,12 +24,11 @@ logprint("Label: %s" % label)
 # ALL CHROMOSOME WORK
 print("Getting correlation")
 df = pd.read_csv(fname, sep = "\t")
-# cor =  df.iloc[:,1:df.shape[1]-2].T.corr()
+cor =  df.iloc[:,1:df.shape[1]-2].T.corr()
 
 print("Ploting")
 plt.figure(figsize=(7,7),dpi=300)
-# masking = np.tril(cor)
-masking = np.triu(cor)
+masking = np.tril(cor)
 sns.heatmap(cor ,xticklabels=False, yticklabels=False, 
 	mask=masking, vmin=-1., vmax=1., 
 	cmap=RdBu_5.mpl_colormap)
