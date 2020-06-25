@@ -77,7 +77,7 @@ df = DataFrame(src = [], dst = [], src_gstart = Int64[],
 end
 odir = "Data/Pearson/"
 mkpath(odir)
-oname = odir * subtype * "-allchroms.tsv"
+oname = odir * subtype * "-allchroms.csv"
 CSV.write(oname,df)
 
 
@@ -132,7 +132,7 @@ header = ["gname","clusterid","assignmentcost","gstart","chromosome"]
 rename!(df, Symbol.(header)) # Force set header names
 odir = "Data/Clustered/"
 mkpath(odir)
-oname = odir * subtype * "-all-clusters.tsv"
+oname = odir * subtype * "-all-clusters.csv"
 CSV.write(oname,df)
 
 
