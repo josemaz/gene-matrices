@@ -43,7 +43,9 @@ plt.close() # to clean memory
 
 
 # BY CROMOSOME WORK
+df['chromname']= df['chromname'].astype(str)
 for gr_name, df_chr in df.groupby('chromname'):
+	print(gr_name, len(df_chr.index))
 	print("Working in chr: ", gr_name)
 	d = df_chr.sort_values('gstart')
 	ncols = df.shape[1]-2
