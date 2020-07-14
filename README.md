@@ -2,6 +2,7 @@
 This repository contains code and supplementary materials for paper named "xxx".  Alfredo Gonzalez, Jose Maria Zamora-Fuentes, Enrique Hernandez-Lemus, Jesus Espinal-Enriquez
 
 
+
 ## Install enviroment
 
 Install miniconda:
@@ -17,6 +18,7 @@ Install data directory:
 `$ bash install-data.sh`
 
 
+
 ## Bioinformatics process
 
 ### 01 - Clean subtype data
@@ -26,6 +28,7 @@ Install data directory:
 Outputs are saved on:
 
 `$ ls Data/clean/  `
+
 
 ### 02 - Clustering 
 
@@ -37,11 +40,14 @@ Execute in backgorund to best performance:
 
 Clustering Outputs are saved on:
 
-`$ ls Data/Clustered/  `
+`$ ls Data/Clustered  `
+
+Clustering by independent chromosome was named with *chr* label, and clustering by all chromosomes was named as *all* label in each subtype directory.
 
 Pearson triangular matrix in list format are saved on:
 
 `$ ls Data/Pearson/  `
+
 
 ### 03 - Pearson correlation
 

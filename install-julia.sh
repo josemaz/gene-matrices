@@ -8,6 +8,9 @@ julia -e 'import Pkg; Pkg.add("Clustering")'
 julia -e 'import Pkg; Pkg.add("DataFrames")'
 julia -e 'import Pkg; Pkg.add("CSV")'
 julia -e 'import Pkg; Pkg.add("ArgParse")'
+julia -e 'import Pkg; Pkg.add("Plots")'
+julia -e 'import Pkg; Pkg.add("Gadfly")'
+julia -e 'import Pkg; Pkg.add("GRUtils")'
 rm -rf julia-1.4.2-linux-x86_64.tar.gz*
 echo "To remove julia: rm -rf $HOME/julia-1.4.2"
 echo "JULIA INSTALLED SUCCESSFULLY"

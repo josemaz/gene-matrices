@@ -130,7 +130,7 @@ println("Cluster counts: ",c.counts)
 df = DataFrame([expr[:,1],c.assignments,c.costs,expr[:,end-1],expr[:,end]])
 header = ["gname","clusterid","assignmentcost","gstart","chromosome"]
 rename!(df, Symbol.(header)) # Force set header names
-odir = "Data/Clustered/"
+odir = "Data/Clustered/" * subtype * "/"
 mkpath(odir)
 oname = odir * subtype * "-all-clusters.csv"
 CSV.write(oname,df)
