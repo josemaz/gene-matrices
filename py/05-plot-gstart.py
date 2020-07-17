@@ -48,19 +48,20 @@ def discrete_cmap(N, base_cmap=None):
 
 
 def plotheat(data, oname, nc, t):
-	mask_ut=np.triu(np.ones(A.shape)).astype(np.bool)
+	mask_ut=np.triu(np.ones(data.shape)).astype(np.bool)
 	# ax = sns.heatmap(A,xticklabels=False, yticklabels=False, cmap="Accent_r")
 	name = oname + ".png"
 	print(name)
 	base = plt.cm.get_cmap('rainbow')
-	fixedcolors =5
+	fixedcolors =10
 	color_list = base(np.linspace(0, 1, fixedcolors))
-	color_list = np.insert(color_list,0,[1, 1, 1, 1], axis=0) # Pone el fondo blanco
+	# color_list = np.insert(color_list,0,[1, 1, 1, 1], axis=0) # Pone el fondo blanco
+	color_list = np.insert(color_list,0,[52/255, 58/255, 235/255, 1], axis=0) # Pone el fondo azul
 
 	for i in range(fixedcolors+1,nc):
-		gris = [194/255, 177/255, 174/255, 1]
+		gris = [240/255, 235/255, 235/255, 1]
 		color_list = np.insert(color_list,i,gris, axis=0) # Pone el fondo blanco
-	print(color_list)
+	# print(color_list)
 
 	# sns.heatmap(A, center=0, cmap=sns.diverging_palette(220, 20, as_cmap=True))	
 	ax = sns.heatmap(data, mask=mask_ut, xticklabels=False, yticklabels=False, 
@@ -93,52 +94,60 @@ chrs = ['19']
 
 for chrom in chrs:
 	
-	subtypes = ["Healthy","Basal","Her2","LumA","LumB"]
-	subtypes = ["Healthy","Basal"]
+	subtype = "Healthy"
+	subtype = "Basal"
+	fname = Dir + "/" + subtype + "/" + subtype + "-chr" + str(chrom) + "-clusters.tsv"
+	d = dirpng + "/chr" + str(chrom)
+	logprint("Plot dir: %s" % d)
+	logprint("Plot label: %s" % subtype)
+	logprint("Plot chr name: %s" % chrom)
+	fp = Path(d)
+	fp.mkdir(parents=True, exist_ok=True)
+
+
+	#! 1. PREPARING DATA
+
+	df = pd.read_csv(fname, sep = ",")
+	nclusters = df["clusterid"].max()
+	vc = df["clusterid"].value_counts().head(10)
+	vc = vc.rename_axis('unique_values').reset_index(name='counts')
+	print(vc["counts"].tolist())
+	df = df.iloc[df.groupby('clusterid').user_id.transform('size').argsort(kind='mergesort')]
+	print(df)
+	
+
+	df = df.sort_values(by=['chromosome','gstart']) # Order by cromosome and clusterid
+	print("Number of Clusters: %s" % nclusters)
+	print("Number of Genes: %s" % df.shape[0]) # Print rows		
+
+	A = list2adj(df)
+
+
+	# ! 2. PLOTTING
+	oname = d + "/" + subtype + "-chr" + str(chrom) + "-heatgstart"
+	print("Plot name: " + oname)
+	title = 'Clusters in whole genome of ' + subtype + " chr " + str(chrom)
+	plotheat(A, oname, nclusters, title)
+	sys.exit(15)
+
+
+	subtypes = ["Basal","Her2","LumA","LumB"] 
 	for subtype in subtypes:
-		fname = Dir + "/" + subtype + "/" + subtype + "-chr" + str(chrom) + "-clusters.tsv"
-		d = dirpng + "/chr" + str(chrom)
-		logprint("Plot dir: %s" % d)
-		logprint("Plot label: %s" % subtype)
-		logprint("Plot chr name: %s" % chrom)
-		fp = Path(d)
-		fp.mkdir(parents=True, exist_ok=True)
-
-
-		#! 1. PREPARING DATA
+		logprint("Subtype: %s" % subtype)
+		fname = "Data/Clustered/" + subtype + "/" + subtype + "-chr" + str(chrom) + "-clusters.tsv"
+		print(fname)
 		df = pd.read_csv(fname, sep = ",")
-		nclusters = df["clusterid"].max()
-		vc = df["clusterid"].value_counts().head(10)
-		vc = vc.rename_axis('unique_values').reset_index(name='counts')
-		print(vc["counts"].tolist())
-		# sys.exit(15)
-
-		df = df.sort_values(by=['chromosome','gstart']) # Order by cromosome and clusterid
-		print("Number of Clusters: %s" % nclusters)
-		print("Number of Genes: %s" % df.shape[0]) # Print rows
-
+		# df = df.set_index('gname')			
+		# df = df.loc[df.gname]
+		df = df.sort_values(by=['chromosome','gstart'])
+		
+		# A = list2adj(df, start=0)
 		A = list2adj(df)
 
-
-		# ! 2. PLOTTING
-		oname = d + "/" + subtype + "-chr" + str(chrom) + "-heatgstart"
-		print("Plot name: " + oname)
-		title = 'Clusters in whole genome of ' + subtype
+		oname = d + "/" + subtype + "-chr" + str(chrom) + "-heatgstart" #+ "-clusters.png"
+		# print(oname)
+		title = 'Clusters in whole genome of ' + subtype + " chr " + str(chrom)
 		plotheat(A, oname, nclusters, title)
-		sys.exit(15)
-
-
-	# subtypes = ["Basal","Her2","LumA","LumB"] 
-	# for subtype in subtypes:
-	# 	logprint("Subtype: %s" % subtype)
-	# 	fname = "Data/Clustered/" + subtype + "/" + subtype + "-" + cell + "-clusters.tsv"
-	# 	df = pd.read_csv(fname, sep = ",")
-	# 	df = df.set_index('gname')
-	# 	df = df.loc[healthy.gname]
-	# 	A = list2adj(df, start=0)
-	# 	oname = d + "/" + subtype + "-" + cell + "-" #+ "-clusters.png"
-	# 	# print(oname)
-	# 	plotheat(A,oname,nclusters)
 
 
 
