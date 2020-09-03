@@ -11,6 +11,9 @@ julia -e 'import Pkg; Pkg.add("ArgParse")'
 julia -e 'import Pkg; Pkg.add("Plots")'
 julia -e 'import Pkg; Pkg.add("Gadfly")'
 julia -e 'import Pkg; Pkg.add("GRUtils")'
+julia -e 'import Pkg; Pkg.add("PyPlot")'
+julia -e 'import Pkg; Pkg.add("GR")'
+
 rm -rf julia-1.4.2-linux-x86_64.tar.gz*
 echo "To remove julia: rm -rf $HOME/julia-1.4.2"
 echo "JULIA INSTALLED SUCCESSFULLY"

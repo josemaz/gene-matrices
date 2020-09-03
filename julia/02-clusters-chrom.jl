@@ -13,7 +13,7 @@ n_kmedoids_out = 10 # Output de de las iteraciones del minimo de los kmedoids
 function max_eigv(gene) #returns largest eigenvalue of a randomized matrix generated from data.
     gran = zeros(size(gene))
     for i = 1:size(gene,2)
-        gran[:,i] = gene[shuffle(1:end),i]
+        gran[:,i] = gene[shuffle(1:end),i] #Shuffle over genes
     end
  #    @time mr = corr_mat(gran)
     # println(mr[[end-1],end])
@@ -78,7 +78,7 @@ for g in groupby(df, :chromname)
         flush(stdout)
     end
     #! Get eigenvalue of gene
-    m_ev = filter(x->x>0.0000001, eigvals(m))
+    m_ev = filter(x->x>0.0000001, eigvals(m)) # Drop Zeros
     #! Todos los eigenvalues de la correlacion que sean mayores al mayor de las 
     #! correlaciones muestreadas; el numero de estos eigenvalues es el numero de cluesters
     #! nc = 13, for Basal-All.txt with nmats=100
