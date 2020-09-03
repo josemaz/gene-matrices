@@ -13,6 +13,7 @@ logprint = lambda x: cprint(x, 'red', attrs=["bold"])
 # MAIN
 #############################
 print("Processing input")
+#! python py/03-plot-pearson.py Data/clean/Basal-clean.tsv
 fname = sys.argv[1] # tsv filename: gen,clusterid,cost,genestart,chromid
 dirpng = "Plots/"
 label = fname.split('/')[-1].split('-')[0]
