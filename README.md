@@ -13,17 +13,17 @@ Install julia:
 
 `$ bash install-julia.sh`
 
+## Bioinformatics process
+
+### 0.5 - Install data
+
 Install data directory:
 
 `$ bash install-data.sh`
 
-
-
-## Bioinformatics process
-
 ### 01 - Clean subtype data
 
-`$ bash 01-clean.sh`
+`$ bash 01-cleandata.sh`
 
 Outputs are saved on:
 
