@@ -1,6 +1,6 @@
+
 # gene-matrices
 This repository contains code and supplementary materials for paper named "xxx".  Alfredo Gonzalez, Jose Maria Zamora-Fuentes, Enrique Hernandez-Lemus, Jesus Espinal-Enriquez
-
 
 
 ## Install enviroment
@@ -13,13 +13,15 @@ Install julia:
 
 `$ bash install-julia.sh`
 
+
+
 ## Bioinformatics process
 
-### 0.5 - Install data
 
-Install data directory:
+### 0.5 - Download data
 
-`$ bash install-data.sh`
+`$ bash download-data.sh`
+
 
 ### 01 - Clean subtype data
 
@@ -31,6 +33,8 @@ Outputs are saved on:
 
 
 ### 02 - Clustering 
+
+This step can be slow.
 
 `$ bash 02-clustering.sh`
 
