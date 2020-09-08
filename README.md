@@ -20,6 +20,12 @@ Install julia:
 
 ### 0.5 - Download data
 
+We shared matrix expression as public data in:
+
+http://espinal3.inmegen.gob.mx:5270/genecorr/subtipos-originales/
+
+to save locally:
+
 `$ bash download-data.sh`
 
 
@@ -29,7 +35,7 @@ Install julia:
 
 Outputs are saved on:
 
-`$ ls Data/clean/  `
+`$ ls Data/clean/`
 
 
 ### 02 - Clustering 
