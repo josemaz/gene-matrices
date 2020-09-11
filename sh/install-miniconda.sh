@@ -8,7 +8,10 @@ wget "https://repo.anaconda.com/miniconda/${pkg}"
 bash ${pkg} -p $condadir -b -s
 rm -rf /tmp/${pkg}
 . $condadir/bin/activate
-conda install -y numpy pandas seaborn palettable termcolor
+conda install -y pandas palettable termcolor
+conda install numpy=1.18.1
+conda install seaborn=0.10.0
+conda install matplotlib=3.1.3
 easy_install trash-cli
 pip install python-igraph
 pip install gprofiler-official
