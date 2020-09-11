@@ -7,8 +7,7 @@ srcpath=$(dirname $(realpath $0))
 dirclean="Data/clean"
 
 t1=$SECONDS
-# for t in Healthy Basal Her2 LumA LumB
-for t in Her2
+for t in Healthy Basal Her2 LumA LumB
 do 
 	clr_bold clr_green "Using ${t} subtype"
 	
