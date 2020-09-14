@@ -121,7 +121,7 @@ for chr in chrs:
 	# #! 3. Save Order
 	# #df.gname.to_csv("Data-Healthy-cluster-order.txt",index=False)
 
-	subtypes = ["Basal","Her2","LumA","LumB"] 
+	subtypes = ["Basal","Her2","LumA","LumB"]
 	for subtype in subtypes:
 		logprint("Subtype: %s" % subtype)
 		fname = "Data/Clustered/" + subtype + "/" + subtype + "-" + cell + "-clusters.tsv"

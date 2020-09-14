@@ -12,7 +12,6 @@ logprint = lambda x: cprint(x, 'red', attrs=["bold"])
 #############################
 # MAIN
 #############################
-print("Processing input")
 #! python py/03-plot-pearson.py Data/clean/Basal-clean.tsv
 fname = sys.argv[1] # tsv filename: gen,clusterid,cost,genestart,chromid
 dirpng = "Plots/"
@@ -28,11 +27,11 @@ df = pd.read_csv(fname, sep = "\t")
 cor =  df.iloc[:,1:df.shape[1]-2].T.corr()
 
 print("Ploting")
-plt.figure(figsize=(7,7),dpi=300)
+plt.figure(figsize=(10,10),dpi=300)
 masking = np.tril(cor)
 sns.heatmap(cor ,xticklabels=False, yticklabels=False, 
-	mask=masking, vmin=-1., vmax=1., 
-	cmap=RdBu_5.mpl_colormap)
+	mask=masking, vmin=-1., vmax=1., square=True,
+	cbar_kws={"shrink": 0.75}, cmap=RdBu_5.mpl_colormap)
 plt.title('Pearson correlation' + label)
 plt.ylabel('Gene start position')
 plt.xlabel('Gene start position')
@@ -51,11 +50,11 @@ for gr_name, df_chr in df.groupby('chromname'):
 	ncols = df.shape[1]-2
 	cor = d.iloc[:,1:ncols].T.corr()
 	print("Ploting chr: ", gr_name)
-	plt.figure(figsize=(5,5),dpi=300)
+	plt.figure(figsize=(10,10),dpi=300)
 	masking = np.tril(cor)
 	sns.heatmap(cor ,xticklabels=False, yticklabels=False, 
-		mask=masking, vmin=-1., vmax=1., 
-		cmap=RdBu_5.mpl_colormap)
+		mask=masking, vmin=-1., vmax=1., square=True,
+		cbar_kws={"shrink": 0.75}, cmap=RdBu_5.mpl_colormap)
 	t = "Pearson correlation: " + label 
 	t = t + ', chr: ' + str(gr_name)
 	t = t + ', genes: ' + str(len(d.index))

@@ -10,3 +10,7 @@ do
 	clr_bold clr_green "Using ${t} subtype"
 	python py/03-plot-pearson.py Data/clean/${t}-clean.tsv
 done
+
+# Plots
+# Healthy colors vs subtypes
+python py/04-plot-clusters.py
