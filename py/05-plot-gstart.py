@@ -151,6 +151,7 @@ for chrom in chrs:
 		
 	
 	subtypes = ["Healthy","Basal","Her2","LumA","LumB"]
+	subtypes = ["Healthy"]
 	for subtype in subtypes:
 		logprint("Subtype: %s" % subtype)
 		fname = "Data/Clustered/" + subtype + "/" + subtype + "-chr" + str(chrom) + "-clusters.tsv"
