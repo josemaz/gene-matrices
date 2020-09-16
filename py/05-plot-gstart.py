@@ -100,7 +100,7 @@ def plotcum(dat, oname, nc, t):
 	cums.plot(figsize=(9,7), title = t, cmap=cmapfixed(nc,zero=False,rev=True))
 	plt.xlabel("Gene start")
 	plt.ylabel("Number of Genes")
-	plt.legend(frameon=False, loc='upper left', ncol=3, fontsize = 'x-small')	
+	plt.legend(frameon=False, loc='upper left', ncol=3, fontsize = 'small')	
 	plt.savefig(name,dpi=300)
 	plt.clf()
 	plt.close() # to clean memory
@@ -151,7 +151,6 @@ for chrom in chrs:
 		
 	
 	subtypes = ["Healthy","Basal","Her2","LumA","LumB"]
-	subtypes = ["Healthy"]
 	for subtype in subtypes:
 		logprint("Subtype: %s" % subtype)
 		fname = "Data/Clustered/" + subtype + "/" + subtype + "-chr" + str(chrom) + "-clusters.tsv"
