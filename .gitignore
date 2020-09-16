@@ -1,6 +1,7 @@
 sftp-config.json
 data.*
 Plots
+py/hetamaps-lines.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

@@ -11,6 +11,6 @@ do
 	python py/03-plot-pearson.py Data/clean/${t}-clean.tsv
 done
 
-# Plots
+# Plots of clusters and cumulative distributions
 # Healthy colors vs subtypes
 python py/04-plot-clusters.py

@@ -7,11 +7,11 @@ This repository contains code and supplementary materials for paper named "xxx".
 
 Install miniconda:
 
-`$ bash install-miniconda.sh`
+`$ bash sh/install-miniconda.sh`
 
 Install julia:
 
-`$ bash install-julia.sh`
+`$ bash sh/install-julia.sh`
 
 
 
@@ -26,12 +26,12 @@ http://espinal3.inmegen.gob.mx:5270/genecorr/subtipos-originales/
 
 to save locally:
 
-`$ bash download-data.sh`
+`$ bash sh/download-data.sh`
 
 
 ### 01 - Clean subtype data
 
-`$ bash 01-cleandata.sh`
+`$ bash sh/01-cleandata.sh`
 
 Outputs are saved on:
 
@@ -42,11 +42,11 @@ Outputs are saved on:
 
 This step can be slow.
 
-`$ bash 02-clustering.sh`
+`$ bash sh/02-clustering.sh`
 
 Execute in backgorund to best performance:
 
-`$ bash 02-clustering.sh &> salida.log &`
+`$ bash sh/02-clustering.sh &> salida.log &`
 
 Clustering Outputs are saved on:
 
@@ -66,3 +66,11 @@ Pearson triangular matrix in list format are saved on:
 Plots are saved on:
 
 `$ ls Plots/Healthy/    # for example`
+
+
+### 04 - Plot clusters
+
+
+
+### 04 - Plot correlations and cumulative distribution
+
