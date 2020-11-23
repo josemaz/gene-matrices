@@ -18,7 +18,6 @@ Install julia:
 
 ## Bioinformatic process
 
-
 ### 0.5 - Download data
 
 We shared expression matrices as public data in:
@@ -55,17 +54,19 @@ Clustering Outputs are saved on:
 
 Clustering by independent chromosome was named with *chr* label, and clustering by all chromosomes was named as *all* label in each subtype directory.
 
-Pearson triangular matrix in list format are saved on:
+Pearsons triangular matrix are in list format are saved on:
 
 `$ ls Data/Pearson/  `
 
-Optional: You can download our calculation with
+Optional: You can download our results with
 
 `$ bash sh/download-pearson.sh`
 
 Warnning: Pearsons correlation can use 30GB of space.
 
 
+
+## Visualization
 
 ### 03 - Pearson correlation
 
@@ -75,8 +76,8 @@ Plots are saved on:
 
 `$ ls Plots/Healthy/    # for example`
 
-
 ### 04 - Plot clusters
+
 
 
 ### 04 - Plot correlations and cumulative distribution
