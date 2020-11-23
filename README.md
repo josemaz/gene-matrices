@@ -3,7 +3,8 @@
 This repository contains code and supplementary materials for paper named "xxx".  Alfredo Gonzalez, Jose Maria Zamora-Fuentes, Enrique Hernandez-Lemus, Jesus Espinal-Enriquez
 
 
-## Install enviroment
+
+## Pre-requisites: nstall enviroment
 
 Install miniconda:
 
@@ -15,16 +16,16 @@ Install julia:
 
 
 
-## Bioinformatics process
+## Bioinformatic process
 
 
 ### 0.5 - Download data
 
-We shared matrix expression as public data in:
+We shared expression matrices as public data in:
 
 http://espinal3.inmegen.gob.mx:5270/genecorr/subtipos-originales/
 
-to save locally:
+to save locally on `Data/Expression`:
 
 `$ bash sh/download-data.sh`
 
@@ -58,6 +59,13 @@ Pearson triangular matrix in list format are saved on:
 
 `$ ls Data/Pearson/  `
 
+Optional: You can download our calculation with
+
+`$ bash sh/download-pearson.sh`
+
+Warnning: Pearsons correlation can use 30GB of space.
+
+
 
 ### 03 - Pearson correlation
 
@@ -70,7 +78,6 @@ Plots are saved on:
 
 ### 04 - Plot clusters
 
-How
 
 ### 04 - Plot correlations and cumulative distribution
 
