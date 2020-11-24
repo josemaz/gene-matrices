@@ -73,7 +73,7 @@ Pearson triangular matrices are in list format are saved on:
 
 To get heatmaps of pearson corelation for every subtype: 
 
-`$ bash sh/03-Plot.sh`
+`$ bash sh/03-plot-corr.sh`
 
 Plots are saved on:
 

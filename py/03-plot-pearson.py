@@ -3,7 +3,7 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 from pathlib import Path
-from palettable.colorbrewer.diverging import RdBu_11
+from palettable.colorbrewer.diverging import RdBu_11 #BlueOrangeRed_3
 from termcolor import colored, cprint
 import sys
 logprint = lambda x: cprint(x, 'red', attrs=["bold"])
