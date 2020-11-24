@@ -99,7 +99,7 @@ Plots are saved by chromosome as:
 
 Files with `cum` suffix are cummilative plots of elements in every cluster. Moreover `heat` suffix are heatmap plots by cluster. The colors are the same for each cluster in `cum` and `heat`.
 
-### 05 - Plot correlations and cumulative distribution
+### 06 - Scatters plots of distance
 
 `$ python py/06-plot-scatt.py`
 
