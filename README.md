@@ -59,7 +59,7 @@ Pearson triangular matrices are in list format are saved on:
 
 `$ ls Data/Pearson/  `
 
-**Optional:** You can download our results with
+**Optional:** If you don't have computing hardware. You can download our results with
 
 `$ bash sh/download-pearson.sh`
 
@@ -83,5 +83,15 @@ Plots are saved on:
 
 `$ python py/04-plot-clusters.py`
 
+Plots are saved by chromosome as:
+
+`$ ls Plots/chr1/Healthy-chr1-rainbow.png    # for example`
+`$ ls Plots/chr1/Basal-chr1-rainbow.png    # for example`
+
 ### 05 - Plot correlations and cumulative distribution
+
+
+
+
+
 
