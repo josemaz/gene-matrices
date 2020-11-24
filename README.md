@@ -94,8 +94,8 @@ Plots are saved by chromosome as:
 
 Plots are saved by chromosome as:
 
-`$ ls Healthy-chr1-gstart-cum.png`
-`$ ls Healthy-chr1-gstart-heat.png`
+`$ ls Plots/chr1/Healthy-chr1-gstart-cum.png`
+`$ ls Plots/chr1/Healthy-chr1-gstart-heat.png`
 
 Files with `cum` suffix are cummilative plots of elements in every cluster. Moreover `heat` suffix are heatmap plots by cluster. The colors are the same for each cluster in `cum` and `heat`.
 
