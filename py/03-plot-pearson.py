@@ -3,7 +3,7 @@ import numpy as np
 import seaborn as sns
 import matplotlib.pyplot as plt
 from pathlib import Path
-from palettable.colorbrewer.diverging import RdBu_5
+from palettable.colorbrewer.diverging import RdBu_11
 from termcolor import colored, cprint
 import sys
 logprint = lambda x: cprint(x, 'red', attrs=["bold"])
@@ -31,7 +31,8 @@ plt.figure(figsize=(10,10),dpi=300)
 masking = np.tril(cor)
 sns.heatmap(cor ,xticklabels=False, yticklabels=False, 
 	mask=masking, vmin=-1., vmax=1., square=True,
-	cbar_kws={"shrink": 0.75}, cmap=RdBu_5.mpl_colormap)
+	# cbar_kws={"shrink": 0.75}, cmap=RdBu_11.mpl_colormap)
+	cbar_kws={"shrink": 0.75}, cmap=plt.get_cmap('seismic'))
 plt.title('Pearson correlation' + label)
 plt.ylabel('Gene start position')
 plt.xlabel('Gene start position')
@@ -54,7 +55,8 @@ for gr_name, df_chr in df.groupby('chromname'):
 	masking = np.tril(cor)
 	sns.heatmap(cor ,xticklabels=False, yticklabels=False, 
 		mask=masking, vmin=-1., vmax=1., square=True,
-		cbar_kws={"shrink": 0.75}, cmap=RdBu_5.mpl_colormap)
+		# cbar_kws={"shrink": 0.75}, cmap=RdBu_11.mpl_colormap)
+		cbar_kws={"shrink": 0.75}, cmap=plt.get_cmap('seismic'))
 	t = "Pearson correlation: " + label 
 	t = t + ', chr: ' + str(gr_name)
 	t = t + ', genes: ' + str(len(d.index))

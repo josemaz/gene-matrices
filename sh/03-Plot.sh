@@ -13,4 +13,4 @@ done
 
 # Plots of clusters and cumulative distributions
 # Healthy colors vs subtypes
-python py/04-plot-clusters.py
+# python py/04-plot-clusters.py
