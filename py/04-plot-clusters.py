@@ -47,7 +47,7 @@ def discrete_cmap(N, base_cmap=None):
     return base.from_list(cmap_name, color_list, N)
 
 
-def plotheat(data, oname, nc):
+def plotheat(data, oname, nc, label):
 
 	mask_ut=np.triu(np.ones(A.shape)).astype(np.bool)
 	# ax = sns.heatmap(A,xticklabels=False, yticklabels=False, cmap="Accent_r")
@@ -63,7 +63,7 @@ def plotheat(data, oname, nc):
 		print(name)
 		ax = sns.heatmap(data, mask=mask_ut, xticklabels=False, yticklabels=False, 
 			cmap=discrete_cmap( nc, i))
-		plt.title('Clusters in whole genome of ' + label)
+		plt.title(label)
 		# plt.ylabel('Gene start position')
 		# plt.xlabel('Gene start position')
 		plt.tight_layout()
@@ -115,7 +115,8 @@ for chr in chrs:
 	# ! 2. PLOTTING
 	oname = d + "/" + label + "-" + cell + "-"
 	print("Plot name: " + oname)
-	plotheat(A, oname, nclusters)
+	lab = 'Clusters for ' + label + ' - chr ' + str(chr)
+	plotheat(A, oname, nclusters, lab)
 
 
 	# #! 3. Save Order
@@ -131,7 +132,8 @@ for chr in chrs:
 		A = list2adj(df, start=0)
 		oname = d + "/" + subtype + "-" + cell + "-" #+ "-clusters.png"
 		# print(oname)
-		plotheat(A,oname,nclusters)
+		lab = 'Clusters for ' + subtype + ' - chr' + str(chr)
+		plotheat(A,oname,nclusters,lab)
 
 
 

@@ -83,5 +83,5 @@ Plots are saved on:
 
 `$ python py/04-plot-clusters.py`
 
-### 04 - Plot correlations and cumulative distribution
+### 05 - Plot correlations and cumulative distribution
 
