@@ -24,11 +24,11 @@ for f in glob.glob(corrsdir + '*.csv'):
 		print(corr)
 		corr.plot.scatter(x='distance', y='pearson', 
 			title= "Pearson Distance", c='Black');
-		plt.axhline(y=0, color='r', linestyle='-', markersize=12)
-		plt.show()
+		plt.axhline(y=0, color='r', linestyle='-', markersize=12)		
+		# plt.show()
 		fout = 'Plots/chr' + chrom + '/'
 		fout =  fout + subtype + '-chr' + chrom + '-pdist.png'
 		print(fout)
-		# plt.savefig(fout,dpi=300)
-		# plt.clf()
-		# plt.close() # to clean memory
+		plt.savefig(fout,dpi=300)
+		plt.clf()
+		plt.close() # to clean memory
