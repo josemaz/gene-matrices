@@ -1,7 +1,7 @@
 import pandas as pd
 import numpy as np
 import seaborn as sns
-import glob, sys
+import glob, sys, os 
 import matplotlib.pyplot as plt
 from termcolor import cprint
 
@@ -24,12 +24,13 @@ for f in glob.glob(corrsdir + '*.csv'):
 		corr = g[g['dst_chrom']==chrom]
 		corr = corr.assign(distance = corr['dst_gstart'] - corr['src_gstart'])
 		corr.sort_values(by=['distance'], inplace=True)
-		print(corr)
+		# print(corr)
 		corr.plot.scatter(x='distance', y='pearson', 
-			title= "Pearson Distance", c='Black');
-		plt.axhline(y=0, color='r', linestyle='-', markersize=12)		
+			title= "Pearson Distance", c='Black', s=2);
+		plt.axhline(y=0, color='r', linestyle='-', markersize=20)		
 		# plt.show()
 		fout = 'Plots/chr' + chrom + '/'
+		os.makedirs(fout, exist_ok=True)
 		fout =  fout + subtype + '-chr' + chrom + '-pdist.png'
 		print(fout)
 		plt.savefig(fout,dpi=300)
