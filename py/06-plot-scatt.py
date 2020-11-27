@@ -29,7 +29,7 @@ def getcorr(exprmat):
 	corr.rename(columns = {'gstart':'dst_gstart'}, inplace = True)
 	corr = corr.assign(distance = corr['dst_gstart'] - corr['src_gstart'])
 	corr.sort_values(by=['distance'], inplace=True)
-	print(corr)
+	# print(corr)
 	return corr
 
 logprint = lambda x: cprint(x, 'red', attrs=["bold"])
