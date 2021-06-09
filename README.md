@@ -4,7 +4,7 @@ This repository contains code and supplementary materials for paper named "xxx".
 
 
 
-## Pre-requisites: nstall enviroment
+## Pre-requisites: Install enviroment
 
 Install miniconda:
 
